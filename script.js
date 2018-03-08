@@ -12,7 +12,7 @@ window.onload = function() {
             document.getElementById('icon').setAttribute('src', jsonObject.weather[0].icon);
             document.getElementsByClassName('wind')[0].insertAdjacentHTML('afterbegin', '<h2 id=\'wind\'>' + windDirection(jsonObject.wind) + ', ' + jsonObject.wind.speed + ' knots ' + '</h2>');
             document.getElementById('wind').insertAdjacentHTML('beforeend', '<i class=\'wi wi-wind from-' + jsonObject.wind.deg.toFixed() + '-deg\'></i>');
-            document.getElementById('degree').innerText = jsonObject.main.temp.toFixed() + ' F';
+            document.getElementById('degree').innerText = (jsonObject.main.temp * 1.8 + 32).toFixed() + ' F';
             document.getElementById('description').innerText = jsonObject.weather[0].main;
             console.log(jsonObject);
         })
